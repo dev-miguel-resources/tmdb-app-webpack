@@ -1,5 +1,5 @@
 const path = require("path");
-//const webpack = require("webpack"); // plugins
+const webpack = require("webpack"); // plugins
 
 module.exports = {
   // mode: defines el entorno para el cual estamos configurando el build
@@ -77,9 +77,11 @@ module.exports = {
     ],
   },
   // plugins: son características que me permiten darle soporte a mi configuración con webpack
-  /*plugins: [
-
-  ],*/
+  plugins: [
+    new webpack.ProvidePlugin({
+      React: "react",
+    }),
+  ],
   // resolve: es donde dejo registradas todas las extensiones que estoy resolviendo de cara al build
   resolve: {
     extensions: [".js", ".jsx", ".css", ".png"],
