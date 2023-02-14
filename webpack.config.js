@@ -8,8 +8,8 @@ module.exports = {
   entry: "./src/index.js",
   // output: defines donde alojarás los archivos estáticos generados y puedes personalizar el nombre del archivo estático del js
   output: {
-    path: path.join(__dirname, "dist"), // tmdb-app-webpack/public
-    filename: "build.js",
+    path: path.join(__dirname, "public"), // tmdb-app-webpack/public
+    filename: "bundle.js",
   },
   // module rules: defines las configuraciones y reglas para la carga de las extensiones que tengan tus archivos
   module: {
