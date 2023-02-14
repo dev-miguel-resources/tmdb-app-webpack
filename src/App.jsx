@@ -59,8 +59,6 @@ function App() {
     setCurrentTVShow(tvShow);
   }
 
-  console.log(currentTVShow);
-
   useEffect(() => {
     fetchPopulars();
   }, []);

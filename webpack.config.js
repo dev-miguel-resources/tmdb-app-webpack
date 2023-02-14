@@ -1,5 +1,5 @@
 const path = require("path");
-//const webpack = require("webpack");
+const webpack = require("webpack");
 
 module.exports = {
   // mode: defines el entorno para el cual estamos configurando el build
@@ -77,9 +77,11 @@ module.exports = {
     ],
   },
   // plugins: son características que me permiten darle soporte a mi configuración con webpack
-  /*plugins: [
-    
-  ],*/
+  plugins: [
+    new webpack.ProvidePlugin({
+      React: "react",
+    })
+  ],
   // resolve: es donde dejo registradas todas las extensiones que estoy resolviendo de cara al build
   resolve: {
     extensions: [".js", ".jsx", ".css", ".png"],
@@ -89,7 +91,7 @@ module.exports = {
     hints: process.env.NODE_ENV === "production" ? "error" : false, // error (red), warning (yellow), false (no quieres que haga nada),
     // no quiere decir que para procesar los recursos tenga que ocupar todo la memoria del buffer disponible
     maxEntrypointSize: 580000, // el buffer de entrada de los archivos que se van a procesar para el build: js y css
-    maxAssetSize: 580000, // el buffer de entrada para cada recurso que no sea js ni css
+    maxAssetSize: 580000, // el buffer de entrada para cada recurso que no sea js ni css, por ej: images, json, etc...
     /*assetFilter: function(assetFilename) { // sirve para excluir un recurso de la estimación del buffer, para no agregarlo al presupuesto
       return !assetFilename.endsWith('.jpg');
     },*/ 
