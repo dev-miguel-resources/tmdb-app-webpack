@@ -90,7 +90,7 @@ module.exports = {
     // no quiere decir que para procesar los recursos tenga que ocupar todo la memoria del buffer disponible
     maxEntrypointSize: 580000, // el buffer de entrada de los archivos que se van a procesar para el build: js y css
     maxAssetSize: 580000, // el buffer de entrada para cada recurso que no sea js ni css
-    /*assetFilter: function(assetFilename) {
+    /*assetFilter: function(assetFilename) { // sirve para excluir un recurso de la estimación del buffer, para no agregarlo al presupuesto
       return !assetFilename.endsWith('.jpg');
     },*/ 
   },
